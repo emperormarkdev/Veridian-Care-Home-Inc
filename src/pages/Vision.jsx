@@ -27,22 +27,14 @@ function Vision() {
           </span>
           <div className="mt-6 h-1 w-14 rounded-full bg-clay-500" />
           <p className="mt-10 font-display text-3xl leading-snug font-semibold sm:text-4xl">
-            A future where senior care is defined by warmth and trust, not
-            by routine.
+            To be a trusted leader in exceptional care, creating a community where every individual can live with dignity, purpose, independence, and joy. Supported by compassionate professionals who treat every resident as family.
           </p>
           <div className="mt-10 space-y-6 text-lg leading-relaxed text-muted">
             <p>
-              We envision a community where families never have to choose
-              between quality care and a place that feels like home. Where
-              every resident is met with patience, every staff member is
-              empowered to care deeply, and every day holds space for
-              connection.
+              Real comfort means having the freedom to choose your own path. We design our days around your personal schedule, ensuring you have the support needed to stay self-reliant, chase your favorite hobbies, and wake up with a sense of excitement.
+
             </p>
-            <p>
-              As we grow, we remain committed to setting a new standard for
-              what senior care can be. Rooted in respect, guided by
-              empathy, and built to last.
-            </p>
+            
           </div>
         </Reveal>
       </section>

@@ -14,16 +14,12 @@ function Mission() {
           </span>
           <div className="mt-6 h-1 w-14 rounded-full bg-clay-500" />
           <p className="mt-10 font-display text-3xl leading-snug font-semibold sm:text-4xl">
-            To provide every resident with attentive, individualized care
-            that honors their dignity, independence, and story.
+            To provide compassionate, high quality, and person-centred care that enhances the wellbeing, dignity, independence, and quality of life of every individual we serve.
+
           </p>
           <div className="mt-10 space-y-6 text-lg leading-relaxed text-muted">
             <p>
-              At Veridian, we believe growing older should never mean
-              becoming invisible. Our mission is simple. We want to build a
-              home, not a facility, where every resident is treated as a
-              whole person with a history, preferences, and a voice that
-              still matters.
+              At Veridian Care Home, we are committed to creating a safe, welcoming, and supportive environment where residents feel valued, respected, and truly at home.
             </p>
             <p>
               We hold ourselves to a standard that goes beyond checklists.

@@ -154,7 +154,7 @@ function MainLayout() {
               className="inline-flex items-center gap-2 rounded-full bg-clay-500 px-6 py-3 text-sm font-medium tracking-wide text-cream shadow-sm hover:bg-clay-600 hover:shadow-md"
             >
               <PhoneIcon className="h-4 w-4" />
-              Call +1 (825) 867-3549
+              Let's Talk
             </motion.a>
           </div>
         </div>
@@ -207,11 +207,11 @@ function MainLayout() {
                 </li>
                 <li>
                   <a
-                    href="mailto:veridiancarehome@gmail.com"
+                    href="mailto:info@veridiancarehome.inc"
                     className="flex items-center gap-2.5 transition-colors hover:text-cream"
                   >
                     <MailIcon className="h-4 w-4 flex-none text-cream/50" />
-                    veridiancarehome@gmail.com
+                    info@veridiancarehome.inc
                   </a>
                 </li>
                 <li className="flex items-start gap-2.5">

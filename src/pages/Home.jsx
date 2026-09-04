@@ -88,7 +88,7 @@ const faqs = [
   {
     question: 'How do I schedule a tour?',
     answer:
-      'Call +1 (825) 867-3549 or email veridiancarehome@gmail.com, and we will find a time that works for your family.',
+      'Call +1 (825) 867-3549 or email info@veridiancarehome.inc, and we will find a time that works for your family.',
   },
 ]
 
@@ -187,13 +187,7 @@ function Home() {
               transition={{ duration: 0.7, delay: 0.7 }}
               className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted lg:mx-0"
             >
-              At Veridian, growing older is never treated like a diagnosis
-              to manage or a schedule to keep. Our residents are 
-              greeted by name every morning, encouraged to hold on to the
-              hobbies and routines that make them who they are, and cared
-              for by people who take the time to truly know them. It is the
-              kind of care we would want for our own parents, and it is the
-              kind of care we give every single day.
+              Growing older shouldn't mean compromising your individuality. At Veridian, we reject the rigid schedules and clinical checklists of traditional care. Instead, our residents wake up to personal greetings, continue the hobbies they love, and shape their own days. We have built a community anchored by people who take the time to truly know you. It’s simple: we provide the exact level of respect, warmth, and high-touch care we would want for our own families. No exceptions.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -237,8 +231,7 @@ function Home() {
                 Care That Feels Personal
               </p>
               <p className="mt-1 text-sm leading-snug text-muted">
-                Every resident here is known by name, by story, and by what
-                makes them laugh, not just by a room number.
+                Every resident here is known by name, by story, and by what makes them laugh. We believe true care is rooted in deep connection.
               </p>
             </motion.div>
           </motion.div>
