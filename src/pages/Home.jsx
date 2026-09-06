@@ -8,8 +8,10 @@ import {
 import { useRef } from 'react'
 import AccordionItem from '../components/AccordionItem'
 import Button from '../components/Button'
+import Eyebrow from '../components/Eyebrow'
 import PhotoFrame from '../components/PhotoFrame'
 import Reveal from '../components/Reveal'
+import SectionWave from '../components/SectionWave'
 import TiltCard from '../components/TiltCard'
 import { galleryPhotos, heroPortrait, highlightPhotos } from '../data/photos'
 
@@ -18,16 +20,19 @@ const highlights = [
     title: 'Personalized Care',
     body: 'We sit down with every family before move-in day and shape a care plan around the routines, preferences, and life story of the person we are caring for. No two plans look the same, because no two people are the same.',
     image: highlightPhotos.personalizedCare,
+    alt: 'A caregiver going over a personalized care plan with a resident. PLACEHOLDER, replace with a real Veridian photo.',
   },
   {
     title: 'A Warm Community',
     body: 'We fill our days with shared meals, quiet mornings, and time in the garden whenever the weather allows. This is a home first, and we work hard to keep it feeling that way.',
     image: highlightPhotos.community,
+    alt: 'Residents gathered together in a shared community space. PLACEHOLDER, replace with a real Veridian photo.',
   },
   {
     title: 'A Team That Cares',
     body: 'Our team is trained and attentive, but more than that, they genuinely care. You will notice it in the small things, like remembering exactly how someone takes their tea.',
     image: highlightPhotos.team,
+    alt: 'A member of the Veridian care team smiling. PLACEHOLDER, replace with a real Veridian photo.',
   },
 ]
 
@@ -38,7 +43,7 @@ const approach = [
   },
   {
     title: 'Familiar Faces',
-    body: 'We are keeping our team small on purpose, so your family member is cared for by people they recognize and trust, not a rotating cast of strangers.',
+    body: 'We are keeping our team small on purpose, so your loved one is cared for by people they recognize and trust, not a rotating cast of strangers.',
   },
   {
     title: 'A Home, Not a Facility',
@@ -46,7 +51,7 @@ const approach = [
   },
   {
     title: 'Always Reachable',
-    body: 'Questions do not wait for office hours. Call us any time and you will speak with someone who actually knows your family member by name.',
+    body: 'Questions do not wait for office hours. Call us any time and you will speak with someone who actually knows your loved one by name.',
   },
 ]
 
@@ -81,7 +86,7 @@ const faqs = [
       'Every plan looks a little different. Some residents need help with daily living, others need more attentive nursing support. We build the plan around the person, not the other way around.',
   },
   {
-    question: 'Can family members visit anytime?',
+    question: 'Can I visit my loved one anytime?',
     answer:
       'Family is always welcome here. Give us a call and we will walk you through the best times to visit so you can spend meaningful time together.',
   },
@@ -149,15 +154,13 @@ function Home() {
 
         <div className="relative mx-auto grid max-w-6xl items-center gap-16 px-6 py-20 sm:px-8 sm:py-28 lg:grid-cols-[1.05fr_0.95fr] lg:py-32">
           <div className="text-center lg:text-left">
-            <motion.span
+            <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 text-sm font-medium tracking-[0.2em] text-sage-600 uppercase"
             >
-              <span className="text-gold-500">✦</span>
-              Veridian Care Home
-            </motion.span>
+              <Eyebrow icon>Veridian Care Home</Eyebrow>
+            </motion.div>
 
             <motion.h1
               variants={wordContainer}
@@ -187,7 +190,7 @@ function Home() {
               transition={{ duration: 0.7, delay: 0.7 }}
               className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted lg:mx-0"
             >
-              Growing older shouldn't mean compromising your individuality. At Veridian, we reject the rigid schedules and clinical checklists of traditional care. Instead, our residents wake up to personal greetings, continue the hobbies they love, and shape their own days. We have built a community anchored by people who take the time to truly know you. It’s simple: we provide the exact level of respect, warmth, and high-touch care we would want for our own families. No exceptions.
+              Growing older shouldn't mean compromising your individuality. At Veridian, we reject the rigid schedules and clinical checklists of traditional care. Instead, our residents wake up to personal greetings, continue the hobbies they love, and shape their own days. We have built a community anchored by people who take the time to truly know you.<br />We provide the exact level of respect, warmth, and high-touch care we would want for our own families.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -236,14 +239,14 @@ function Home() {
             </motion.div>
           </motion.div>
         </div>
+
+        <SectionWave fill="fill-sage-800" />
       </section>
 
-      <section className="border-y border-border bg-sage-800">
+      <section className="bg-sage-800">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:px-8">
           <Reveal className="max-w-xl">
-            <span className="text-sm font-medium tracking-[0.2em] text-sage-300 uppercase">
-              Our Approach
-            </span>
+            <Eyebrow tone="onDark">Our Approach</Eyebrow>
             <h2 className="mt-4 text-3xl font-semibold text-cream sm:text-4xl">
               What guides how we care for your family.
             </h2>
@@ -268,9 +271,7 @@ function Home() {
       <section className="bg-surface">
         <div className="mx-auto max-w-6xl px-6 py-20 sm:px-8">
           <Reveal className="max-w-xl">
-            <span className="text-sm font-medium tracking-[0.2em] text-sage-600 uppercase">
-              Why families choose us
-            </span>
+            <Eyebrow>Why families choose us</Eyebrow>
             <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
               Care that feels personal, in a place that feels like home.
             </h2>
@@ -282,7 +283,7 @@ function Home() {
                 <TiltCard max={6} className="rounded-3xl">
                   <PhotoFrame
                     src={item.image}
-                    alt="PLACEHOLDER photo, replace with a real Veridian photo."
+                    alt={item.alt}
                     tone="clay"
                     intensity={0.3}
                     rounded="soft"
@@ -302,9 +303,7 @@ function Home() {
       <section className="border-t border-border bg-cream">
         <div className="mx-auto max-w-6xl px-6 py-20 sm:px-8">
           <Reveal className="max-w-xl">
-            <span className="text-sm font-medium tracking-[0.2em] text-sage-600 uppercase">
-              A glimpse inside
-            </span>
+            <Eyebrow>A glimpse inside</Eyebrow>
             <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
               Everyday moments at Veridian.
             </h2>
@@ -331,9 +330,7 @@ function Home() {
       <section className="border-t border-border bg-surface">
         <div className="mx-auto max-w-6xl px-6 py-20 sm:px-8">
           <Reveal className="max-w-xl">
-            <span className="text-sm font-medium tracking-[0.2em] text-sage-600 uppercase">
-              What we offer
-            </span>
+            <Eyebrow>What we offer</Eyebrow>
             <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
               Support for every part of daily life.
             </h2>
@@ -377,9 +374,7 @@ function Home() {
       <section className="border-t border-border bg-surface">
         <div className="mx-auto max-w-3xl px-6 py-20 sm:px-8">
           <Reveal className="text-center">
-            <span className="text-sm font-medium tracking-[0.2em] text-sage-600 uppercase">
-              Questions
-            </span>
+            <Eyebrow>Questions</Eyebrow>
             <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
               Frequently asked questions.
             </h2>

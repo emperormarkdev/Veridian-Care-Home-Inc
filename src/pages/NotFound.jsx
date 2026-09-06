@@ -1,11 +1,10 @@
 import Button from '../components/Button'
+import Eyebrow from '../components/Eyebrow'
 
 function NotFound() {
   return (
     <section className="mx-auto max-w-2xl px-6 py-32 text-center sm:px-8">
-      <span className="text-sm font-medium tracking-[0.2em] text-sage-600 uppercase">
-        404
-      </span>
+      <Eyebrow>404</Eyebrow>
       <h1 className="mt-6 text-3xl font-medium sm:text-4xl">
         We couldn't find that page.
       </h1>

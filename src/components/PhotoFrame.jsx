@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 const radii = {
   organic:
     'rounded-[3rem_1.25rem_3rem_1.25rem] sm:rounded-[4.5rem_1.5rem_4.5rem_1.5rem]',
@@ -21,6 +23,8 @@ function PhotoFrame({
   imgClassName = '',
   children,
 }) {
+  const [loaded, setLoaded] = useState(false)
+
   return (
     <div
       className={`relative overflow-hidden ${radii[rounded] ?? radii.organic} ${className}`}
@@ -29,8 +33,15 @@ function PhotoFrame({
         src={src}
         alt={alt}
         loading={priority ? 'eager' : 'lazy'}
+        onLoad={() => setLoaded(true)}
         className={`h-full w-full object-cover ${imgClassName}`}
-        style={{ filter: 'grayscale(1) contrast(1.05)' }}
+        style={{
+          filter: `grayscale(1) contrast(1.05) blur(${loaded ? '0px' : '16px'})`,
+          opacity: loaded ? 1 : 0,
+          transform: loaded ? 'scale(1)' : 'scale(1.04)',
+          transition:
+            'filter 0.7s ease-out, opacity 0.6s ease-out, transform 0.7s ease-out',
+        }}
       />
       <div
         aria-hidden="true"

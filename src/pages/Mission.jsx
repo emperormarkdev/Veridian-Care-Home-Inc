@@ -1,3 +1,4 @@
+import Eyebrow from '../components/Eyebrow'
 import PhotoFrame from '../components/PhotoFrame'
 import Reveal from '../components/Reveal'
 import TiltCard from '../components/TiltCard'
@@ -8,10 +9,7 @@ function Mission() {
     <div>
       <section className="mx-auto grid max-w-6xl items-center gap-14 px-6 py-20 sm:px-8 sm:py-28 lg:grid-cols-[1fr_0.85fr] lg:py-32">
         <Reveal>
-          <span className="inline-flex items-center gap-2 text-sm font-medium tracking-[0.2em] text-sage-600 uppercase">
-            <span className="text-gold-500">✦</span>
-            Our Mission
-          </span>
+          <Eyebrow icon>Our Mission</Eyebrow>
           <div className="mt-6 h-1 w-14 rounded-full bg-clay-500" />
           <p className="mt-10 font-display text-3xl leading-snug font-semibold sm:text-4xl">
             To provide compassionate, high quality, and person-centred care that enhances the wellbeing, dignity, independence, and quality of life of every individual we serve.
@@ -53,7 +51,7 @@ function Mission() {
             },
             {
               title: 'Consistency Matters',
-              body: 'The same familiar faces greet you day after day. Never a revolving door of strangers your family member has to get used to all over again.',
+              body: 'The same familiar faces greet you day after day. Never a revolving door of strangers your loved one has to get used to all over again.',
             },
             {
               title: 'Comfort Over Convenience',

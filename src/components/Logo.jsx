@@ -1,27 +1,14 @@
-function Logo({ className = '' }) {
+function Logo({ className = '', iconColor = 'var(--color-sage-700)' }) {
   return (
     <span className={`inline-flex items-center gap-2 ${className}`}>
-      <svg
-        width="28"
-        height="28"
-        viewBox="0 0 28 28"
-        fill="none"
-        aria-hidden="true"
-      >
-        <circle cx="14" cy="14" r="14" className="fill-sage-700" />
+      <svg width="24" height="22" viewBox="0 0 46 42" fill="none" aria-hidden="true">
         <path
-          d="M14 6c4.5 1 8 4.6 8 9.2 0 4.3-3.4 7.3-8 8.3-4.6-1-8-4-8-8.3C6 10.6 9.5 7 14 6z"
-          className="fill-cream"
-        />
-        <path
-          d="M14 9v13.2"
-          stroke="var(--color-sage-700)"
-          strokeWidth="1"
-          strokeLinecap="round"
+          d="M19.2676 1.2855C21.7229 -0.451556 25.0134 -0.426042 27.4414 1.34898L43.1309 12.8187C44.9339 14.1368 46 16.2366 46 18.4701V34.3773C46 38.2433 42.866 41.3773 39 41.3773H7C3.13401 41.3773 0 38.2433 0 34.3773V18.5384C0 16.2666 1.10239 14.1357 2.95703 12.8236L19.2676 1.2855ZM37 27.2015C37 25.2593 35.1743 23.834 33.29 24.305L25.167 26.3353C23.7458 26.6906 22.2574 26.6781 20.8428 26.2972L13.748 24.3871C11.8579 23.8782 10.0001 25.3017 10 27.2591C10 28.527 10.8038 29.6559 12.002 30.0707L19.2158 32.5677C21.6721 33.4179 24.3379 33.4471 26.8125 32.6517L34.9277 30.0433C36.1623 29.6465 36.9999 28.4983 37 27.2015ZM23 11.3773C20.2386 11.3773 18.0001 13.616 18 16.3773C18 19.1387 20.2386 21.3773 23 21.3773C25.7614 21.3773 28 19.1387 28 16.3773C27.9999 13.616 25.7614 11.3773 23 11.3773Z"
+          fill={iconColor}
         />
       </svg>
       <span className="font-display text-lg font-medium text-ink">
-        Veridian
+        Veridian Care Home
       </span>
     </span>
   )

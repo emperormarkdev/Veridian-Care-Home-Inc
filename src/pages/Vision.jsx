@@ -1,3 +1,4 @@
+import Eyebrow from '../components/Eyebrow'
 import PhotoFrame from '../components/PhotoFrame'
 import Reveal from '../components/Reveal'
 import TiltCard from '../components/TiltCard'
@@ -21,10 +22,7 @@ function Vision() {
         </Reveal>
 
         <Reveal delay={0.15}>
-          <span className="inline-flex items-center gap-2 text-sm font-medium tracking-[0.2em] text-sage-600 uppercase">
-            <span className="text-gold-500">✦</span>
-            Our Vision
-          </span>
+          <Eyebrow icon>Our Vision</Eyebrow>
           <div className="mt-6 h-1 w-14 rounded-full bg-clay-500" />
           <p className="mt-10 font-display text-3xl leading-snug font-semibold sm:text-4xl">
             To be a trusted leader in exceptional care, creating a community where every individual can live with dignity, purpose, independence, and joy. Supported by compassionate professionals who treat every resident as family.
