@@ -42,21 +42,23 @@ src/
   index.css           Design tokens (colors, fonts) and global styles
 public/
   favicon.svg, icons.svg, og-image.jpg
+  apple-touch-icon.svg   iOS home-screen icon (full-bleed sage square)
   site.webmanifest    PWA / add-to-home-screen metadata
   robots.txt, sitemap.xml   Search-engine directives (list new routes in sitemap.xml)
-  _redirects          www -> apex + SPA fallback (Netlify / Cloudflare Pages syntax)
 index.html             Document head: fonts, meta tags, structured data
+vercel.json            www -> apex redirect + SPA rewrite (deploys on Vercel)
 ```
 
-## Domain & hosting
+## Domain & hosting (Vercel)
 
 - **Canonical domain is the apex `https://veridiancarehome.inc/`** (no `www`). It is
-  hard-coded in `index.html` (canonical, Open Graph, JSON-LD), `sitemap.xml`, `robots.txt`,
-  and `public/_redirects`.
-- Configure the host / DNS so `www.veridiancarehome.inc` issues a 301 redirect to the apex.
-  `public/_redirects` covers Netlify and Cloudflare Pages; other hosts need their own rule.
-- `public/_redirects` also contains the SPA fallback (`/* /index.html 200`) so deep links
-  like `/mission` survive a hard refresh. On other hosts, add the equivalent rewrite.
+  hard-coded in `index.html` (canonical, Open Graph, JSON-LD), `sitemap.xml`, and `robots.txt`.
+- In the Vercel project's **Domains** settings, add both `veridiancarehome.inc` and
+  `www.veridiancarehome.inc`, and set `www` to redirect to the apex. `vercel.json` also
+  carries a host-based 301 as a backstop.
+- `vercel.json` `rewrites` send every extension-less path to `index.html` so React Router
+  deep links (`/mission`, `/privacy`) survive a hard refresh. Real files (`/robots.txt`,
+  `/assets/*`) are served from disk first and are unaffected.
 
 ## Privacy & cookies
 
@@ -76,9 +78,11 @@ A few things are intentionally left as drafts and need review before launch:
 
 - **Photos** — every image in `src/assets/photos/` is a stock placeholder (see the comment banner at the top of `src/data/photos.js` for exactly what each one should be replaced with). Overwrite the file in place, keeping the same filename, and no code changes are needed.
 - **Social preview image** — `public/og-image.jpg` is also a placeholder; swap it for a real, polished image before sharing links publicly.
-- **Domain** — the production domain `https://veridiancarehome.inc/` is now wired through
-  `index.html`, `sitemap.xml`, `robots.txt`, and `_redirects`. Confirm the host redirects
-  `www` to the apex, and add a real PNG `apple-touch-icon` (currently points at the SVG favicon).
+- **Domain** — the production domain `https://veridiancarehome.inc/` is wired through
+  `index.html`, `sitemap.xml`, `robots.txt`, and `vercel.json`. Add both domains in Vercel
+  and point `www` at the apex.
+- **Apple touch icon** — `public/apple-touch-icon.svg` is an SVG. iOS home-screen icons are
+  most reliable as a 180x180 PNG; export one from the SVG and swap the `<link>` if needed.
 - **Privacy policy** — `/privacy` is a plain-language draft and needs legal review.
 - **Copy** — all written copy (hero text, mission/vision statements, FAQ answers, the pull quote in the "Our Promise" section) is draft content and should be reviewed and edited in your own words before publishing.
 - **Contact details** — phone, email, and address appear in `src/layouts/MainLayout.jsx` (footer) and `src/pages/Home.jsx` (FAQ). Double check both are current.
