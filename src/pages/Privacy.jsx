@@ -34,7 +34,7 @@ function Privacy() {
           className="mt-14 space-y-10 text-base leading-relaxed text-muted"
         >
           <p>
-            This policy explains how Veridian Care Home handles personal
+            This policy explains how Veridian Care Home Inc. handles personal
             information collected through this website,{' '}
             <span className="whitespace-nowrap">veridiancarehome.inc</span>. It
             is written to reflect how the site actually works today: there is
@@ -95,9 +95,11 @@ function Privacy() {
           <Section title="Sharing and disclosure">
             <p>
               We do not sell or rent your personal information. We share it
-              only with the service providers that operate this site on our
-              behalf (our website host and email provider), and only as
-              needed for them to provide that service. We may also disclose
+              only with the service providers that operate this site and our
+              contact channels on our behalf &mdash; our website host (Vercel)
+              and our domain registrar and email provider (Spaceship, whose
+              mailboxes are provided as Spacemail) &mdash; and only as needed
+              for them to provide that service. We may also disclose
               information where required by law or to protect the safety of a
               resident.
             </p>
@@ -105,10 +107,11 @@ function Privacy() {
 
           <Section title="Where your information is held">
             <p>
-              This website is hosted on servers located in the United States.
-              Website logs and any message you send us may therefore be
-              stored or processed outside Canada, where local laws may allow
-              access by courts, law enforcement, and government authorities.
+              This website is hosted on servers located in the United States,
+              and our email is handled by a third-party provider. Website
+              logs and any message you send us may therefore be stored or
+              processed outside Canada, where local laws may allow access by
+              courts, law enforcement, and government authorities.
             </p>
           </Section>
 
@@ -178,7 +181,7 @@ function Privacy() {
                 />
               </li>
               <li className="text-sm">
-                Veridian Care Home
+                Veridian Care Home Inc.
                 <br />
                 10925 97 St NW, Edmonton, AB T5H 2M7
               </li>
