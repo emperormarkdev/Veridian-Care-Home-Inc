@@ -33,15 +33,39 @@ Then open the local URL Vite prints (defaults to `http://localhost:5173`).
 ```
 src/
   assets/photos/     Photo files, imported by src/data/photos.js
-  components/        Shared UI pieces (Button, PhotoFrame, Reveal, TiltCard, AccordionItem, icons)
+  components/        Shared UI pieces (Button, PhotoFrame, Reveal, TiltCard, AccordionItem,
+                     CookieNotice, ObfuscatedEmail, icons)
   data/photos.js      Single source of truth for every image on the site
+  lib/consent.js      Tiny localStorage consent store + useConsent hook (gates the map embed)
   layouts/MainLayout.jsx   Header, nav, and footer shared across all pages
-  pages/              One file per route (Home, Mission, Vision, NotFound)
+  pages/              One file per route (Home, Mission, Vision, Privacy, NotFound)
   index.css           Design tokens (colors, fonts) and global styles
 public/
   favicon.svg, icons.svg, og-image.jpg
+  apple-touch-icon.svg   iOS home-screen icon (full-bleed sage square)
+  site.webmanifest    PWA / add-to-home-screen metadata
+  robots.txt, sitemap.xml   Search-engine directives (list new routes in sitemap.xml)
 index.html             Document head: fonts, meta tags, structured data
+vercel.json            www -> apex redirect + SPA rewrite (deploys on Vercel)
 ```
+
+## Domain & hosting (Vercel)
+
+- **Canonical domain is the apex `https://veridiancarehome.inc/`** (no `www`). It is
+  hard-coded in `index.html` (canonical, Open Graph, JSON-LD), `sitemap.xml`, and `robots.txt`.
+- In the Vercel project's **Domains** settings, add both `veridiancarehome.inc` and
+  `www.veridiancarehome.inc`, and set `www` to redirect to the apex. `vercel.json` also
+  carries a host-based 301 as a backstop.
+- `vercel.json` `rewrites` send every extension-less path to `index.html` so React Router
+  deep links (`/mission`, `/privacy`) survive a hard refresh. Real files (`/robots.txt`,
+  `/assets/*`) are served from disk first and are unaffected.
+
+## Privacy & cookies
+
+The site sets only one essential `localStorage` value (the map-consent choice) and runs no
+analytics. The Google Maps footer embed is withheld until the visitor opts in via the
+`CookieNotice` banner. `/privacy` holds a plain-language draft policy that **must be reviewed
+by legal counsel** before launch, especially if a contact form is added.
 
 ## Design System
 
@@ -54,6 +78,11 @@ A few things are intentionally left as drafts and need review before launch:
 
 - **Photos** — every image in `src/assets/photos/` is a stock placeholder (see the comment banner at the top of `src/data/photos.js` for exactly what each one should be replaced with). Overwrite the file in place, keeping the same filename, and no code changes are needed.
 - **Social preview image** — `public/og-image.jpg` is also a placeholder; swap it for a real, polished image before sharing links publicly.
-- **Domain** — `index.html` uses a placeholder production URL (`https://www.veridiancarehome.inc/`) in the canonical link, Open Graph tags, and structured data. Search for that URL and replace it once the real domain is live.
+- **Domain** — the production domain `https://veridiancarehome.inc/` is wired through
+  `index.html`, `sitemap.xml`, `robots.txt`, and `vercel.json`. Add both domains in Vercel
+  and point `www` at the apex.
+- **Apple touch icon** — `public/apple-touch-icon.svg` is an SVG. iOS home-screen icons are
+  most reliable as a 180x180 PNG; export one from the SVG and swap the `<link>` if needed.
+- **Privacy policy** — `/privacy` is a plain-language draft and needs legal review.
 - **Copy** — all written copy (hero text, mission/vision statements, FAQ answers, the pull quote in the "Our Promise" section) is draft content and should be reviewed and edited in your own words before publishing.
 - **Contact details** — phone, email, and address appear in `src/layouts/MainLayout.jsx` (footer) and `src/pages/Home.jsx` (FAQ). Double check both are current.

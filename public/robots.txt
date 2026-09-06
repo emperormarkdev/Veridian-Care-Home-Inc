@@ -1,0 +1,5 @@
+# https://veridiancarehome.inc/
+User-agent: *
+Allow: /
+
+Sitemap: https://veridiancarehome.inc/sitemap.xml

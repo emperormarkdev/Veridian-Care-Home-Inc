@@ -1,0 +1,20 @@
+{
+  "name": "Veridian Care Home",
+  "short_name": "Veridian",
+  "description": "Compassionate, personalized senior care in Edmonton, Alberta.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#faf7f2",
+  "theme_color": "#34503a",
+  "lang": "en-CA",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,10 +1,13 @@
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
+import CookieNotice from '../components/CookieNotice'
 import Eyebrow from '../components/Eyebrow'
 import Logo from '../components/Logo'
-import { ChevronDownIcon, MailIcon, PhoneIcon, PinIcon } from '../components/icons'
+import ObfuscatedEmail from '../components/ObfuscatedEmail'
+import { ChevronDownIcon, PhoneIcon, PinIcon } from '../components/icons'
 import { ctaBackground } from '../data/photos'
+import { useConsent } from '../lib/consent'
 
 const navLinks = [
   { to: '/', label: 'Home' },
@@ -16,6 +19,8 @@ function MainLayout() {
   const [scrolled, setScrolled] = useState(false)
   const [hidden, setHidden] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [consent, setConsent] = useConsent()
+  const mapAllowed = consent === 'accepted'
   const { scrollY } = useScroll()
   const lastY = useRef(0)
 
@@ -32,6 +37,12 @@ function MainLayout() {
 
   return (
     <div className="flex min-h-screen flex-col">
+      <a
+        href="#main"
+        className="sr-only z-50 rounded-full bg-sage-700 px-4 py-2 text-sm font-medium text-cream focus:not-sr-only focus:fixed focus:top-4 focus:left-4"
+      >
+        Skip to content
+      </a>
       <motion.header
         animate={{ y: hidden && !menuOpen ? '-150%' : '0%' }}
         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
@@ -173,7 +184,7 @@ function MainLayout() {
         )}
       </AnimatePresence>
 
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1 focus:outline-none">
         <Outlet />
       </main>
 
@@ -225,13 +236,13 @@ function MainLayout() {
         <div className="relative">
           <span
             aria-hidden="true"
-            className="pointer-events-none absolute -bottom-6 left-1/2 hidden -translate-x-1/2 font-display text-[4.5rem] leading-none font-semibold whitespace-nowrap text-cream/[0.05] italic select-none sm:block lg:text-[6.5rem]"
+            className="pointer-events-none absolute -bottom-2 left-1/2 -translate-x-1/2 font-display text-[clamp(2.25rem,11vw,6.5rem)] leading-none font-semibold whitespace-nowrap text-cream/[0.05] italic select-none sm:-bottom-6"
           >
             Veridian Care Home
           </span>
 
           <div className="relative mx-auto max-w-6xl px-6 py-16 sm:px-8">
-            <div className="grid gap-12 sm:grid-cols-[1.1fr_1fr_1fr]">
+            <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.1fr_1fr_1fr]">
               <div>
                 <Logo className="[&_span]:text-cream" iconColor="#ffffff" />
                 <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream/60">
@@ -254,7 +265,7 @@ function MainLayout() {
                 </ul>
               </div>
 
-              <div className="sm:border-l sm:border-cream/10 sm:pl-10">
+              <div className="lg:border-l lg:border-cream/10 lg:pl-10">
                 <Eyebrow tone="onDarkest" size="sm">
                   Contact
                 </Eyebrow>
@@ -272,16 +283,7 @@ function MainLayout() {
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="mailto:info@veridiancarehome.inc"
-                      className="group flex items-center gap-2.5 transition-colors hover:text-cream"
-                    >
-                      <MailIcon className="h-4 w-4 flex-none text-cream/50" />
-                      <span className="relative">
-                        info@veridiancarehome.inc
-                        <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-cream/50 transition-all duration-300 group-hover:w-full" />
-                      </span>
-                    </a>
+                    <ObfuscatedEmail className="group flex items-center gap-2.5 transition-colors hover:text-cream" />
                   </li>
                   <li className="flex items-start gap-2.5">
                     <PinIcon className="mt-0.5 h-4 w-4 flex-none text-cream/50" />
@@ -294,27 +296,50 @@ function MainLayout() {
                 </ul>
               </div>
 
-              <div className="sm:border-l sm:border-cream/10 sm:pl-10">
+              <div className="sm:col-span-2 lg:col-span-1 lg:border-l lg:border-cream/10 lg:pl-10">
                 <Eyebrow tone="onDarkest" size="sm">
                   Find Us
                 </Eyebrow>
                 <div className="mt-4 overflow-hidden rounded-2xl border border-cream/10 shadow-lg">
-                  <iframe
-                    title="Map to Veridian Care Home"
-                    src="https://www.google.com/maps?q=10925+97+St+NW,+Edmonton,+AB+T5H+2M7,+Canada&output=embed"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="h-40 w-full grayscale-[40%] contrast-[1.1] sm:h-full"
-                  />
+                  {mapAllowed ? (
+                    <iframe
+                      title="Map to Veridian Care Home"
+                      src="https://www.google.com/maps?q=10925+97+St+NW,+Edmonton,+AB+T5H+2M7,+Canada&output=embed"
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="h-44 w-full grayscale-[40%] contrast-[1.1] sm:h-56 lg:h-full"
+                    />
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => setConsent('accepted')}
+                      className="flex h-44 w-full flex-col items-center justify-center gap-2 bg-sage-800 p-5 text-center text-xs leading-relaxed text-cream/70 transition-colors hover:bg-sage-700 hover:text-cream sm:h-56 lg:h-full"
+                    >
+                      <PinIcon className="h-5 w-5 text-cream/50" />
+                      <span className="font-medium text-cream/90">Show the map</span>
+                      <span className="max-w-[220px] text-cream/50">
+                        Loads Google Maps, which may set its own cookies.
+                      </span>
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
 
-            <div className="mt-12 flex items-center justify-between border-t border-cream/10 pt-6">
-              <p className="text-xs text-cream/50">
-                © {new Date().getFullYear()} Veridian Care Home Inc. All
-                rights reserved.
-              </p>
+            <div className="mt-12 flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-t border-cream/10 pt-6">
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+                <p className="text-xs text-cream/50">
+                  © {new Date().getFullYear()} Veridian Care Home Inc. All
+                  rights reserved.
+                </p>
+                <NavLink
+                  to="/privacy"
+                  className="group relative text-xs text-cream/50 transition-colors hover:text-cream/80"
+                >
+                  Privacy Policy
+                  <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-cream/40 transition-all duration-300 group-hover:w-full" />
+                </NavLink>
+              </div>
               <motion.button
                 type="button"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -329,6 +354,8 @@ function MainLayout() {
           </div>
         </div>
       </footer>
+
+      <CookieNotice />
     </div>
   )
 }

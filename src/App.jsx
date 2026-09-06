@@ -1,9 +1,11 @@
 import { AnimatePresence, motion } from 'framer-motion'
+import { useEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
 import Home from './pages/Home'
 import Mission from './pages/Mission'
 import NotFound from './pages/NotFound'
+import Privacy from './pages/Privacy'
 import Vision from './pages/Vision'
 
 function PageTransition({ children }) {
@@ -21,6 +23,10 @@ function PageTransition({ children }) {
 
 function AnimatedRoutes() {
   const location = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location.pathname])
 
   return (
     <AnimatePresence mode="wait">
@@ -47,6 +53,14 @@ function AnimatedRoutes() {
             element={
               <PageTransition>
                 <Vision />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="privacy"
+            element={
+              <PageTransition>
+                <Privacy />
               </PageTransition>
             }
           />
