@@ -22,7 +22,7 @@ function Vision() {
         </Reveal>
 
         <Reveal delay={0.15}>
-          <Eyebrow icon>Our Vision</Eyebrow>
+          <Eyebrow>Our Vision</Eyebrow>
           <div className="mt-6 h-1 w-14 rounded-full bg-clay-500" />
           <p className="mt-10 font-display text-3xl leading-snug font-semibold sm:text-4xl">
             To be a trusted leader in exceptional care, creating a community where every individual can live with dignity, purpose, independence, and joy. Supported by compassionate professionals who treat every resident as family.

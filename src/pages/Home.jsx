@@ -159,7 +159,7 @@ function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <Eyebrow icon>Veridian Care Home</Eyebrow>
+              <Eyebrow>Veridian Care Home</Eyebrow>
             </motion.div>
 
             <motion.h1
