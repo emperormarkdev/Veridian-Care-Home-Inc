@@ -19,7 +19,7 @@ function Privacy() {
     <div className="overflow-x-clip">
       <section className="mx-auto max-w-3xl px-6 py-20 sm:px-8 sm:py-28">
         <Reveal>
-          <Eyebrow icon>Privacy</Eyebrow>
+          <Eyebrow>Privacy</Eyebrow>
           <div className="mt-6 h-1 w-14 rounded-full bg-clay-500" />
           <h1 className="mt-8 text-4xl font-semibold sm:text-5xl">
             Privacy Policy

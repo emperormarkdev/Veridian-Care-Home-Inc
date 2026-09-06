@@ -9,7 +9,7 @@ function Mission() {
     <div className="overflow-x-clip">
       <section className="mx-auto grid max-w-6xl items-center gap-14 px-6 py-20 sm:px-8 sm:py-28 lg:grid-cols-[1fr_0.85fr] lg:py-32">
         <Reveal>
-          <Eyebrow icon>Our Mission</Eyebrow>
+          <Eyebrow>Our Mission</Eyebrow>
           <div className="mt-6 h-1 w-14 rounded-full bg-clay-500" />
           <p className="mt-10 font-display text-3xl leading-snug font-semibold sm:text-4xl">
             To provide compassionate, high quality, and person-centred care that enhances the wellbeing, dignity, independence, and quality of life of every individual we serve.

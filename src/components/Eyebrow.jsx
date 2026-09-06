@@ -9,12 +9,11 @@ const sizes = {
   sm: 'text-base',
 }
 
-function Eyebrow({ children, tone = 'default', size = 'md', icon = false, className = '' }) {
+function Eyebrow({ children, tone = 'default', size = 'md', className = '' }) {
   return (
     <span
-      className={`inline-flex items-center gap-2 font-display italic ${sizes[size]} ${tones[tone]} ${className}`}
+      className={`inline-flex items-center font-display italic ${sizes[size]} ${tones[tone]} ${className}`}
     >
-      {icon && <span className="text-gold-500 not-italic">✦</span>}
       {children}
     </span>
   )
