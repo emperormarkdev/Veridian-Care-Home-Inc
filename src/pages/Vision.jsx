@@ -6,7 +6,7 @@ import { visionPortrait } from '../data/photos'
 
 function Vision() {
   return (
-    <div>
+    <div className="overflow-x-clip">
       <section className="mx-auto grid max-w-6xl items-center gap-14 px-6 py-20 sm:px-8 sm:py-28 lg:grid-cols-[0.85fr_1fr] lg:py-32">
         <Reveal>
           <TiltCard max={5} className="rounded-[3rem_1.25rem_3rem_1.25rem] sm:rounded-[4.5rem_1.5rem_4.5rem_1.5rem]">

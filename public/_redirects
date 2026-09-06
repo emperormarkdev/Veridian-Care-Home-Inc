@@ -1,0 +1,5 @@
+# www -> apex (Netlify / Cloudflare Pages). Host DNS may also need a redirect rule.
+https://www.veridiancarehome.inc/*  https://veridiancarehome.inc/:splat  301!
+
+# SPA fallback: let React Router handle deep links / refreshes.
+/*  /index.html  200

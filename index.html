@@ -1,10 +1,17 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-CA">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#34503a" />
+    <meta name="color-scheme" content="light" />
+    <meta name="apple-mobile-web-app-title" content="Veridian" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="msapplication-TileColor" content="#34503a" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,28 +24,36 @@
       name="description"
       content="Veridian Care Home offers personalized, dignified senior care in Edmonton, Alberta. Schedule a visit and meet the team caring for your family."
     />
+    <meta name="author" content="Veridian Care Home Inc." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+
+    <!-- Local SEO -->
+    <meta name="geo.region" content="CA-AB" />
+    <meta name="geo.placename" content="Edmonton" />
+    <meta name="geo.position" content="53.5776;-113.4909" />
+    <meta name="ICBM" content="53.5776, -113.4909" />
 
     <!--
-      ⚠️ DOMAIN PLACEHOLDER ⚠️
-      The canonical/og:url/twitter:url values below use a placeholder
-      domain. Once this site has a real production URL, replace every
-      occurrence of https://www.veridiancarehome.inc/ below with it.
+      Canonical domain: the apex (naked) domain https://veridiancarehome.inc/
+      is the single source of truth. Configure the host so that
+      www.veridiancarehome.inc 301-redirects to the apex.
     -->
-    <link rel="canonical" href="https://www.veridiancarehome.inc/" />
+    <link rel="canonical" href="https://veridiancarehome.inc/" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Veridian Care Home" />
     <meta property="og:locale" content="en_CA" />
-    <meta property="og:url" content="https://www.veridiancarehome.inc/" />
+    <meta property="og:url" content="https://veridiancarehome.inc/" />
     <meta property="og:title" content="Veridian Care Home | Compassionate Senior Care in Edmonton, AB" />
     <meta
       property="og:description"
       content="Personalized, dignified senior care in Edmonton, Alberta. Schedule a visit and meet the team caring for your family."
     />
     <!-- PLACEHOLDER image, see public/og-image.jpg -->
-    <meta property="og:image" content="https://www.veridiancarehome.inc/og-image.jpg" />
+    <meta property="og:image" content="https://veridiancarehome.inc/og-image.jpg" />
     <meta property="og:image:width" content="1600" />
     <meta property="og:image:height" content="900" />
+    <meta property="og:image:alt" content="Veridian Care Home" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Veridian Care Home | Compassionate Senior Care in Edmonton, AB" />
@@ -46,16 +61,19 @@
       name="twitter:description"
       content="Personalized, dignified senior care in Edmonton, Alberta. Schedule a visit and meet the team caring for your family."
     />
-    <meta name="twitter:image" content="https://www.veridiancarehome.inc/og-image.jpg" />
+    <meta name="twitter:image" content="https://veridiancarehome.inc/og-image.jpg" />
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
+        "@id": "https://veridiancarehome.inc/#business",
         "name": "Veridian Care Home",
-        "image": "https://www.veridiancarehome.inc/og-image.jpg",
+        "description": "Personalized, dignified senior care in Edmonton, Alberta.",
+        "url": "https://veridiancarehome.inc/",
+        "image": "https://veridiancarehome.inc/og-image.jpg",
         "telephone": "+1-825-867-3549",
-        "email": "info@veridiancarehome.inc",
+        "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "10925 97 St NW",
@@ -63,6 +81,15 @@
           "addressRegion": "AB",
           "postalCode": "T5H 2M7",
           "addressCountry": "CA"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 53.5776,
+          "longitude": -113.4909
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Edmonton"
         }
       }
     </script>

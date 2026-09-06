@@ -93,7 +93,7 @@ const faqs = [
   {
     question: 'How do I schedule a tour?',
     answer:
-      'Call +1 (825) 867-3549 or email info@veridiancarehome.inc, and we will find a time that works for your family.',
+      'Call +1 (825) 867-3549, or use the email address in the site footer, and we will find a time that works for your family.',
   },
 ]
 
@@ -228,9 +228,9 @@ function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1 }}
-              className="absolute -bottom-6 -left-6 hidden max-w-[240px] rounded-2xl border border-gold-300/60 bg-surface p-5 shadow-lg sm:block"
+              className="relative z-10 mx-auto -mt-10 w-[86%] max-w-xs rounded-2xl border border-gold-300/60 bg-surface p-4 text-center shadow-lg sm:absolute sm:bottom-[-1.5rem] sm:left-[-1.5rem] sm:mx-0 sm:mt-0 sm:w-auto sm:max-w-[240px] sm:p-5 sm:text-left"
             >
-              <p className="font-display text-2xl font-semibold text-sage-700">
+              <p className="font-display text-xl font-semibold text-sage-700 sm:text-2xl">
                 Care That Feels Personal
               </p>
               <p className="mt-1 text-sm leading-snug text-muted">
