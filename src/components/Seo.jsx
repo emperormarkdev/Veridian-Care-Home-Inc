@@ -12,8 +12,26 @@ const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpg`
  * picks these up; index.html keeps a sensible static default for the
  * homepage and for crawlers that don't run JS (social link unfurlers).
  */
-function Seo({ title, description, path = '/', image = DEFAULT_IMAGE, noindex = false }) {
+function Seo({
+  title,
+  description,
+  path = '/',
+  image = DEFAULT_IMAGE,
+  noindex = false,
+  breadcrumb,
+}) {
   const url = path === '/' ? `${SITE_URL}/` : `${SITE_URL}${path}`
+
+  const breadcrumbJsonLd = breadcrumb
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+          { '@type': 'ListItem', position: 2, name: breadcrumb, item: url },
+        ],
+      }
+    : null
 
   return (
     <>
@@ -37,6 +55,10 @@ function Seo({ title, description, path = '/', image = DEFAULT_IMAGE, noindex = 
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
+
+      {breadcrumbJsonLd && (
+        <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
+      )}
     </>
   )
 }

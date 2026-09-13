@@ -12,13 +12,14 @@ function Vision() {
         title="Our Vision | Veridian Care Home"
         description="Veridian Care Home's vision: a trusted senior care community in Edmonton, AB where every resident lives with dignity, purpose, independence, and joy."
         path="/vision"
+        breadcrumb="Our Vision"
       />
       <section className="mx-auto grid max-w-6xl items-center gap-14 px-6 py-20 sm:px-8 sm:py-28 lg:grid-cols-[0.85fr_1fr] lg:py-32">
         <Reveal>
           <TiltCard max={5} className="rounded-[3rem_1.25rem_3rem_1.25rem] sm:rounded-[4.5rem_1.5rem_4.5rem_1.5rem]">
             <PhotoFrame
               src={visionPortrait}
-              alt="Residents and staff sharing a moment in the garden at Veridian Care Home. PLACEHOLDER, replace with a real Veridian photo."
+              alt="Residents and staff sharing a moment in the garden at Veridian Care Home."
               tone="clay"
               intensity={0.3}
               priority

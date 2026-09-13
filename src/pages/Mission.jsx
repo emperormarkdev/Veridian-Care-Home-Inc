@@ -10,8 +10,9 @@ function Mission() {
     <div className="overflow-x-clip">
       <Seo
         title="Our Mission | Veridian Care Home"
-        description="Veridian Care Home's mission is compassionate, person-centred care that protects the dignity, independence, and quality of life of every resident in Edmonton, Alberta."
+        description="Veridian Care Home's mission: compassionate, person-centred care that protects the dignity, independence, and wellbeing of every resident in Edmonton, AB."
         path="/mission"
+        breadcrumb="Our Mission"
       />
       <section className="mx-auto grid max-w-6xl items-center gap-14 px-6 py-20 sm:px-8 sm:py-28 lg:grid-cols-[1fr_0.85fr] lg:py-32">
         <Reveal>
@@ -39,7 +40,7 @@ function Mission() {
           <TiltCard max={5} className="rounded-[3rem_1.25rem_3rem_1.25rem] sm:rounded-[4.5rem_1.5rem_4.5rem_1.5rem]">
             <PhotoFrame
               src={missionPortrait}
-              alt="A caregiver attentively assisting a resident at Veridian Care Home. PLACEHOLDER, replace with a real Veridian photo."
+              alt="A caregiver attentively assisting a resident at Veridian Care Home."
               intensity={0.35}
               priority
               className="aspect-[4/5] w-full shadow-xl"

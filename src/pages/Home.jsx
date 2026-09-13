@@ -20,19 +20,19 @@ const highlights = [
     title: 'Personalized Care',
     body: 'We sit down with every family before move-in day and shape a care plan around the routines, preferences, and life story of the person we are caring for. No two plans look the same, because no two people are the same.',
     image: highlightPhotos.personalizedCare,
-    alt: 'A caregiver going over a personalized care plan with a resident. PLACEHOLDER, replace with a real Veridian photo.',
+    alt: 'A caregiver going over a personalized care plan with a resident.',
   },
   {
     title: 'A Warm Community',
     body: 'We fill our days with shared meals, quiet mornings, and time in the garden whenever the weather allows. This is a home first, and we work hard to keep it feeling that way.',
     image: highlightPhotos.community,
-    alt: 'Residents gathered together in a shared community space. PLACEHOLDER, replace with a real Veridian photo.',
+    alt: 'Residents gathered together in a shared community space.',
   },
   {
     title: 'A Team That Cares',
     body: 'Our team is trained and attentive, but more than that, they genuinely care. You will notice it in the small things, like remembering exactly how someone takes their tea.',
     image: highlightPhotos.team,
-    alt: 'A member of the Veridian care team smiling. PLACEHOLDER, replace with a real Veridian photo.',
+    alt: 'A member of the Veridian care team smiling.',
   },
 ]
 
@@ -217,7 +217,7 @@ function Home() {
               <motion.div style={{ scale: heroImageScale }}>
                 <PhotoFrame
                   src={heroPortrait}
-                  alt="A resident and caregiver sharing a warm moment at Veridian Care Home. PLACEHOLDER, replace with a real Veridian photo."
+                  alt="A resident and caregiver sharing a warm moment at Veridian Care Home."
                   intensity={0.35}
                   priority
                   className="aspect-[4/5] w-full shadow-xl"
@@ -315,7 +315,7 @@ function Home() {
                 <TiltCard max={10} className="rounded-2xl">
                   <PhotoFrame
                     src={photo.src}
-                    alt={`${photo.alt}. PLACEHOLDER, replace with a real Veridian photo.`}
+                    alt={photo.alt}
                     rounded="soft"
                     intensity={0.2}
                     className="aspect-[3/4] w-full shadow-sm"

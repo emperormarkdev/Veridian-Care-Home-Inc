@@ -22,6 +22,7 @@ function Privacy() {
         title="Privacy Policy | Veridian Care Home"
         description="How Veridian Care Home Inc. collects, uses, and protects personal information on veridiancarehome.inc, in line with Alberta's PIPA and Canada's PIPEDA."
         path="/privacy"
+        breadcrumb="Privacy Policy"
       />
       <section className="mx-auto max-w-3xl px-6 py-20 sm:px-8 sm:py-28">
         <Reveal>
