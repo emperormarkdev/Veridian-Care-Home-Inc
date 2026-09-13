@@ -1,12 +1,18 @@
 import Eyebrow from '../components/Eyebrow'
 import PhotoFrame from '../components/PhotoFrame'
 import Reveal from '../components/Reveal'
+import Seo from '../components/Seo'
 import TiltCard from '../components/TiltCard'
 import { visionPortrait } from '../data/photos'
 
 function Vision() {
   return (
     <div className="overflow-x-clip">
+      <Seo
+        title="Our Vision | Veridian Care Home"
+        description="Veridian Care Home's vision: a trusted senior care community in Edmonton, AB where every resident lives with dignity, purpose, independence, and joy."
+        path="/vision"
+      />
       <section className="mx-auto grid max-w-6xl items-center gap-14 px-6 py-20 sm:px-8 sm:py-28 lg:grid-cols-[0.85fr_1fr] lg:py-32">
         <Reveal>
           <TiltCard max={5} className="rounded-[3rem_1.25rem_3rem_1.25rem] sm:rounded-[4.5rem_1.5rem_4.5rem_1.5rem]">
@@ -24,9 +30,9 @@ function Vision() {
         <Reveal delay={0.15}>
           <Eyebrow>Our Vision</Eyebrow>
           <div className="mt-6 h-1 w-14 rounded-full bg-clay-500" />
-          <p className="mt-10 font-display text-3xl leading-snug font-semibold sm:text-4xl">
+          <h1 className="mt-10 font-display text-3xl leading-snug font-semibold sm:text-4xl">
             To be a trusted leader in exceptional care, creating a community where every individual can live with dignity, purpose, independence, and joy. Supported by compassionate professionals who treat every resident as family.
-          </p>
+          </h1>
           <div className="mt-10 space-y-6 text-lg leading-relaxed text-muted">
             <p>
               Real comfort means having the freedom to choose your own path. We design our days around your personal schedule, ensuring you have the support needed to stay self-reliant, chase your favorite hobbies, and wake up with a sense of excitement.

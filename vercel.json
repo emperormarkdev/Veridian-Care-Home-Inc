@@ -8,5 +8,9 @@
       "permanent": true
     }
   ],
-  "rewrites": [{ "source": "/((?!.*\\.).*)", "destination": "/index.html" }]
+  "rewrites": [
+    { "source": "/mission", "destination": "/index.html" },
+    { "source": "/vision", "destination": "/index.html" },
+    { "source": "/privacy", "destination": "/index.html" }
+  ]
 }
