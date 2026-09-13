@@ -1,6 +1,7 @@
 import Eyebrow from '../components/Eyebrow'
 import ObfuscatedEmail from '../components/ObfuscatedEmail'
 import Reveal from '../components/Reveal'
+import Seo from '../components/Seo'
 import { PhoneIcon } from '../components/icons'
 
 const LAST_UPDATED = 'September 2026'
@@ -17,6 +18,11 @@ function Section({ title, children }) {
 function Privacy() {
   return (
     <div className="overflow-x-clip">
+      <Seo
+        title="Privacy Policy | Veridian Care Home"
+        description="How Veridian Care Home Inc. collects, uses, and protects personal information on veridiancarehome.inc, in line with Alberta's PIPA and Canada's PIPEDA."
+        path="/privacy"
+      />
       <section className="mx-auto max-w-3xl px-6 py-20 sm:px-8 sm:py-28">
         <Reveal>
           <Eyebrow>Privacy</Eyebrow>

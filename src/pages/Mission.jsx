@@ -1,20 +1,26 @@
 import Eyebrow from '../components/Eyebrow'
 import PhotoFrame from '../components/PhotoFrame'
 import Reveal from '../components/Reveal'
+import Seo from '../components/Seo'
 import TiltCard from '../components/TiltCard'
 import { missionPortrait } from '../data/photos'
 
 function Mission() {
   return (
     <div className="overflow-x-clip">
+      <Seo
+        title="Our Mission | Veridian Care Home"
+        description="Veridian Care Home's mission is compassionate, person-centred care that protects the dignity, independence, and quality of life of every resident in Edmonton, Alberta."
+        path="/mission"
+      />
       <section className="mx-auto grid max-w-6xl items-center gap-14 px-6 py-20 sm:px-8 sm:py-28 lg:grid-cols-[1fr_0.85fr] lg:py-32">
         <Reveal>
           <Eyebrow>Our Mission</Eyebrow>
           <div className="mt-6 h-1 w-14 rounded-full bg-clay-500" />
-          <p className="mt-10 font-display text-3xl leading-snug font-semibold sm:text-4xl">
+          <h1 className="mt-10 font-display text-3xl leading-snug font-semibold sm:text-4xl">
             To provide compassionate, high quality, and person-centred care that enhances the wellbeing, dignity, independence, and quality of life of every individual we serve.
 
-          </p>
+          </h1>
           <div className="mt-10 space-y-6 text-lg leading-relaxed text-muted">
             <p>
               At Veridian Care Home, we are committed to creating a safe, welcoming, and supportive environment where residents feel valued, respected, and truly at home.

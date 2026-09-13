@@ -56,9 +56,11 @@ vercel.json            www -> apex redirect + SPA rewrite (deploys on Vercel)
 - In the Vercel project's **Domains** settings, add both `veridiancarehome.inc` and
   `www.veridiancarehome.inc`, and set `www` to redirect to the apex. `vercel.json` also
   carries a host-based 301 as a backstop.
-- `vercel.json` `rewrites` send every extension-less path to `index.html` so React Router
-  deep links (`/mission`, `/privacy`) survive a hard refresh. Real files (`/robots.txt`,
-  `/assets/*`) are served from disk first and are unaffected.
+- `vercel.json` `rewrites` map each known React Router route (`/mission`, `/vision`,
+  `/privacy`) to `index.html` so a hard refresh or deep link survives. It's an explicit
+  list rather than a catch-all so an unknown path (typo, dead link) gets a real HTTP 404
+  from Vercel instead of a "soft 404" (a 200 with the homepage's content), which search
+  engines penalize. Add new routes to this list as they're added to `App.jsx`.
 
 ## Privacy & cookies
 
